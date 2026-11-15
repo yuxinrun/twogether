@@ -19,10 +19,13 @@
 ```bash
 npm install
 npm run dev      # 开发服务器 http://localhost:3000
-npm run build    # 生产构建
-npm run start    # 启动生产服务器
+npm run build    # 静态导出到 ./out（默认不含子路径前缀）
 npm run tsc      # 类型检查
 ```
+
+> 说明：本项目使用 `output: 'export'`，构建产物为静态文件（`./out`）。
+> 本地预览生产产物可用静态服务器，例如 `npx serve out`（默认在根路径）。
+> `GITHUB_PAGES=true npm run build` 才会加上 `/twogether` 子路径前缀，用于 GitHub Pages。
 
 ## 目录结构
 
