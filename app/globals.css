@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC";
+  --font-serif: "Songti SC", "Noto Serif CJK SC", Georgia;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf8f4;
+  color: #34312e;
+  font-feature-settings: "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: rgba(185, 119, 91, 0.2);
+}
+
+/* Editorial headings */
+.font-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Subtle dotted divider */
+.rule-dotted {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+  height: 1px;
+  color: rgba(130, 125, 117, 0.35);
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #b9775b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar for nav */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(130, 125, 117, 0.3);
+  border-radius: 999px;
+}
+
+/* Article prose */
+.article-prose h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #34312e;
+  scroll-margin-top: 6rem;
+}
+.article-prose h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #34312e;
+  scroll-margin-top: 6rem;
+}
+.article-prose p {
+  margin-bottom: 1.1rem;
+  line-height: 1.95;
+  color: #3f3b37;
+  font-size: 1.0625rem;
+}
+.article-prose ul,
+.article-prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.4rem;
+  line-height: 1.9;
+  color: #3f3b37;
+}
+.article-prose li {
+  margin-bottom: 0.5rem;
+}
+.article-prose ul {
+  list-style: disc;
+}
+.article-prose ol {
+  list-style: decimal;
+}
+.article-prose strong {
+  color: #34312e;
+  font-weight: 600;
+}
+.article-prose blockquote {
+  border-left: 3px solid #b9775b;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 1.5rem 0;
+  color: #5a554f;
+  font-style: normal;
+}
+
+/* Animate */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

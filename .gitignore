@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+*.log
+server_output.txt
+build_output.txt
+tsc_output.txt
+server.log
+server.err
+.DS_Store
+*.local
+*.tsbuildinfo
+
+# GitHub Pages 静态导出产物
+out/
